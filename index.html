@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>쑥쑥이 복약 기록</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone" id="phone">
+  <main class="screens">
+
+    <!-- ① 복약 기록 -->
+    <section id="tab-log" class="screen" hidden></section>
+
+    <!-- ② 내 식물 (홈) -->
+    <section id="tab-plant" class="screen"></section>
+
+    <!-- ③ 몸 상태 -->
+    <section id="tab-body" class="screen" hidden>
+      <div id="bodyForm">
+        <h1 class="body-title">약을 드신 지 30분 지났어요. 지금 몸 상태는 어떠세요?</h1>
+        <p class="hint">불편한 정도에 맞는 얼굴을 눌러 주세요</p>
+        <div class="chosen" id="chosen"></div>
+        <div class="scale" id="scale"></div>
+        <div class="ends"><span>0 증상 없음</span><span>10 증상 매우 심함</span></div>
+        <button class="btn primary" id="bodyDone" type="button" disabled>선택 완료</button>
+      </div>
+      <div id="bodyThanks" class="thanks" hidden>
+        <p>답해 주셔서 감사합니다.</p>
+        <p>오늘 상태가 잘 기록되었어요.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar" aria-label="하단 메뉴">
+    <button type="button" data-tab="log"><span class="ti" aria-hidden="true">📋</span><span>복약 기록</span></button>
+    <button type="button" data-tab="plant" class="on"><span class="ti" id="tabPlantIcon" aria-hidden="true"></span><span>내 식물</span></button>
+    <button type="button" data-tab="body"><span class="ti" aria-hidden="true">🙂</span><span>몸 상태</span></button>
+  </nav>
+
+  <div id="modalRoot"></div>
+</div>
+
+<!-- 시연용 관리자 패널 (대상자 화면에는 나오지 않는 영역) -->
+<section class="admin" id="admin" aria-label="시연용 관리자 패널"></section>
+
+<script src="script.js"></script>
+</body>
+</html>
